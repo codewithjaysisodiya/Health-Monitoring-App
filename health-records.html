@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Health Records - HealthCare</title>
+
+    <link rel="stylesheet" href="health-records.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===============================
+     SIDEBAR
+================================ -->
+
+<div class="sidebar">
+
+    <h2>🏥 HealthCare</h2>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                🏠 Home
+            </a>
+        </li>
+
+
+        <li>
+            <a href="dashboard.html">
+                📊 Dashboard
+            </a>
+        </li>
+
+
+        <li>
+            <a href="water-quality.html">
+                💧 Water Quality
+            </a>
+        </li>
+
+
+        <li>
+            <a href="ai-prediction.html">
+                🤖 AI Prediction
+            </a>
+        </li>
+
+
+        <li>
+            <a href="reports.html">
+                📋 Reports
+            </a>
+        </li>
+
+
+        <li>
+            <a href="alerts.html">
+                🚨 Alerts
+            </a>
+        </li>
+
+
+        <li>
+            <a href="health-records.html" class="active">
+                📋 Health Records
+            </a>
+        </li>
+
+
+        <li>
+            <a href="profile.html">
+                👤 My Profile
+            </a>
+        </li>
+
+
+        <li>
+            <a href="login.html" id="logoutBtn">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+
+
+<!-- ===============================
+     MAIN CONTENT
+================================ -->
+
+<div class="main">
+
+
+    <!-- ===============================
+         HEADER
+    ================================ -->
+
+    <div class="header">
+
+        <div>
+
+            <h1>
+                🏥 Health Records
+            </h1>
+
+            <p>
+                View and manage your medical history
+            </p>
+
+        </div>
+
+
+        <div class="user">
+
+            Welcome,
+            <span id="welcomeUser">
+                User
+            </span>
+
+            👋
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         PATIENT INFORMATION
+    ================================ -->
+
+    <div class="card">
+
+        <h2>
+            👤 Patient Information
+        </h2>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-item">
+
+                <span>
+                    Patient Name
+                </span>
+
+                <strong id="patientName">
+                    Loading...
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    Blood Group
+                </span>
+
+                <strong id="bloodGroup">
+                    Not Added
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    Age
+                </span>
+
+                <strong id="patientAge">
+                    Not Added
+                </strong>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <span>
+                    Gender
+                </span>
+
+                <strong id="patientGender">
+                    Not Added
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         MEDICAL HISTORY
+    ================================ -->
+
+    <div class="card">
+
+        <h2>
+            🩺 Medical History
+        </h2>
+
+
+        <!-- Record 1 -->
+
+        <div class="record">
+
+            <div class="record-header">
+
+                <h3>
+                    General Health Checkup
+                </h3>
+
+                <span>
+                    01 Aug 2026
+                </span>
+
+            </div>
+
+
+            <p>
+                Routine health checkup completed.
+                No major medical condition reported.
+            </p>
+
+
+            <strong>
+                Status:
+                <span class="safe">
+                    Healthy
+                </span>
+            </strong>
+
+        </div>
+
+
+
+        <!-- Record 2 -->
+
+        <div class="record">
+
+            <div class="record-header">
+
+                <h3>
+                    Water Quality Health Assessment
+                </h3>
+
+                <span>
+                    05 Aug 2026
+                </span>
+
+            </div>
+
+
+            <p>
+                Water quality assessment performed
+                using pH, TDS and turbidity parameters.
+            </p>
+
+
+            <strong>
+                Status:
+                <span class="warning">
+                    Normal
+                </span>
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         CURRENT MEDICATION
+    ================================ -->
+
+    <div class="card">
+
+        <h2>
+            💊 Current Medication
+        </h2>
+
+
+        <div class="medicine">
+
+            <h3 id="medicineName">
+                No Medication Added
+            </h3>
+
+
+            <p>
+                Current medication information
+                will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         EMERGENCY CONTACT
+    ================================ -->
+
+    <div class="card">
+
+        <h2>
+            🚨 Emergency Contact
+        </h2>
+
+
+        <div class="emergency">
+
+            <p>
+
+                <strong>
+                    Contact Number:
+                </strong>
+
+                <span id="emergencyContact">
+                    Not Added
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ===============================
+         BUTTONS
+    ================================ -->
+
+    <div class="buttons">
+
+        <button
+            onclick="window.location.href='profile.html'">
+
+            👤 My Profile
+
+        </button>
+
+
+        <button
+            onclick="window.location.href='dashboard.html'">
+
+            ⬅ Dashboard
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ===============================
+     JAVASCRIPT
+================================ -->
+
+<script src="health-records.js"></script>
+
+
+</body>
+
+</html>

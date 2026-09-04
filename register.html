@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet"
+          href="register.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <div class="register-box">
+
+        <h1>Create Account</h1>
+
+
+        <form id="registerForm">
+
+
+            <!-- Name -->
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                required>
+
+
+            <!-- Email -->
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required>
+
+
+            <!-- Mobile -->
+
+            <input
+                type="tel"
+                id="mobile"
+                placeholder="Mobile Number"
+                required>
+
+
+            <!-- Password -->
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+
+            <!-- Confirm Password -->
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required>
+
+
+            <!-- Profile Photo -->
+
+            <label for="profilePhoto">
+                Profile Photo
+            </label>
+
+            <input
+                type="file"
+                id="profilePhoto"
+                accept="image/*">
+
+
+            <!-- Photo Preview -->
+
+            <img
+                id="photoPreview"
+                src=""
+                alt="Profile Preview"
+                style="
+                    display:none;
+                    width:100px;
+                    height:100px;
+                    object-fit:cover;
+                    border-radius:50%;
+                    margin:10px auto;
+                ">
+
+
+            <!-- Create Account -->
+
+            <button type="submit">
+
+                Create Account
+
+            </button>
+
+
+        </form>
+
+
+        <p>
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+// ========================================
+// PROFILE PHOTO PREVIEW
+// ========================================
+
+const profilePhoto =
+    document.getElementById("profilePhoto");
+
+const photoPreview =
+    document.getElementById("photoPreview");
+
+
+profilePhoto.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+
+        if (!file) {
+
+            photoPreview.style.display =
+                "none";
+
+            return;
+
+        }
+
+
+        // Check image
+
+        if (!file.type.startsWith("image/")) {
+
+            alert(
+                "Please select an image file."
+            );
+
+            this.value = "";
+
+            return;
+
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload =
+            function (e) {
+
+                photoPreview.src =
+                    e.target.result;
+
+                photoPreview.style.display =
+                    "block";
+
+            };
+
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+
+// ========================================
+// REGISTER USER
+// ========================================
+
+document
+    .getElementById("registerForm")
+    .addEventListener(
+        "submit",
+        function (e) {
+
+            e.preventDefault();
+
+
+            // Get values
+
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim()
+                    .toLowerCase();
+
+
+            const mobile =
+                document
+                    .getElementById("mobile")
+                    .value
+                    .trim();
+
+
+            const password =
+                document
+                    .getElementById("password")
+                    .value;
+
+
+            const confirmPassword =
+                document
+                    .getElementById("confirmPassword")
+                    .value;
+
+
+            // ====================================
+            // PASSWORD CHECK
+            // ====================================
+
+            if (
+                password !==
+                confirmPassword
+            ) {
+
+                alert(
+                    "Passwords do not match!"
+                );
+
+                document
+                    .getElementById(
+                        "confirmPassword"
+                    )
+                    .value = "";
+
+                document
+                    .getElementById(
+                        "confirmPassword"
+                    )
+                    .focus();
+
+                return;
+
+            }
+
+
+            // ====================================
+            // LOAD USERS
+            // ====================================
+
+            let users =
+                JSON.parse(
+                    localStorage.getItem("users")
+                ) || [];
+
+
+            // ====================================
+            // CHECK EXISTING USER
+            // ====================================
+
+            const existingUser =
+                users.find(
+                    user =>
+                        user.email === email
+                );
+
+
+            if (existingUser) {
+
+                alert(
+                    "Email already registered!"
+                );
+
+                document
+                    .getElementById("email")
+                    .focus();
+
+                return;
+
+            }
+
+
+            // ====================================
+            // PROFILE IMAGE
+            // ====================================
+
+            let profileImage =
+                "images/profile.jpg";
+
+
+            const file =
+                profilePhoto.files[0];
+
+
+            // ====================================
+            // IF USER SELECTED PHOTO
+            // ====================================
+
+            if (file) {
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function (e) {
+
+                        profileImage =
+                            e.target.result;
+
+
+                        createUser(
+                            name,
+                            email,
+                            mobile,
+                            password,
+                            profileImage
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            }
+
+            else {
+
+                // Default image
+
+                createUser(
+                    name,
+                    email,
+                    mobile,
+                    password,
+                    profileImage
+                );
+
+            }
+
+        }
+    );
+
+
+
+// ========================================
+// CREATE USER FUNCTION
+// ========================================
+
+function createUser(
+    name,
+    email,
+    mobile,
+    password,
+    profileImage
+) {
+
+
+    let users =
+        JSON.parse(
+            localStorage.getItem("users")
+        ) || [];
+
+
+    // ====================================
+    // USER OBJECT
+    // ====================================
+
+    const newUser = {
+
+        id: Date.now(),
+
+        name: name,
+
+        email: email,
+
+        mobile: mobile,
+
+        password: password,
+
+        profileImage: profileImage,
+
+        age: "",
+
+        gender: "",
+
+        blood: "",
+
+        address: "",
+
+        condition: "",
+
+        medicine: "",
+
+        emergency: ""
+
+    };
+
+
+    // Add user
+
+    users.push(newUser);
+
+
+    // Save users
+
+    localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+    );
+
+
+    alert(
+        "✅ Account Created Successfully!"
+    );
+
+
+    // Go login
+
+    window.location.href =
+        "login.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

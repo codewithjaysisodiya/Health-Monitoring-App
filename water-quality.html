@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality</title>
+
+    <link rel="stylesheet" href="water-quality.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>💧 Water Quality Monitoring</h1>
+
+    <div class="card">
+
+        <div class="item">
+            <label>pH Level</label>
+            <progress id="phBar" value="7" max="14"></progress>
+            <span id="phValue">7</span>
+        </div>
+
+        <div class="item">
+            <label>TDS (ppm)</label>
+            <progress id="tdsBar" value="250" max="1000"></progress>
+            <span id="tdsValue">250</span>
+        </div>
+
+        <div class="item">
+            <label>Turbidity (NTU)</label>
+            <progress id="turbidityBar" value="3" max="10"></progress>
+            <span id="turbidityValue">3</span>
+        </div>
+
+        <div class="item">
+            <label>Temperature (°C)</label>
+            <progress id="tempBar" value="25" max="50"></progress>
+            <span id="tempValue">25</span>
+        </div>
+
+    </div>
+
+    <div class="status">
+
+        <h2 id="statusText">🟢 Safe Water</h2>
+
+    </div>
+
+    <div class="buttons">
+
+        <button id="refreshBtn">🔄 Refresh Data</button>
+
+        <button onclick="window.location.href='dashboard.html'">
+            ⬅ Back
+        </button>
+
+    </div>
+
+</div>
+
+<script src="water-quality.js"></script>
+
+</body>
+</html>

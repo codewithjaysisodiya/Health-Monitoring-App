@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback - HealthCare</title>
+
+    <link rel="stylesheet" href="feedback.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                🏥 Health<span>Care</span>
+            </div>
+
+            <div class="nav-links">
+
+                <a href="index.html">🏠 Home</a>
+
+                <a href="dashboard.html">📊 Dashboard</a>
+
+                <a href="profile.html">👤 Profile</a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= FEEDBACK ================= -->
+
+    <main>
+
+        <section class="feedback-section">
+
+            <div class="feedback-header">
+
+                <div class="feedback-icon">
+                    💬
+                </div>
+
+                <h1>Share Your Feedback</h1>
+
+                <p>
+                    Your feedback helps us improve the
+                    HealthCare experience.
+                </p>
+
+            </div>
+
+
+            <div class="feedback-container">
+
+                <form id="feedbackForm">
+
+                    <!-- Name -->
+
+                    <div class="form-group">
+
+                        <label for="feedbackName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="feedbackEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="feedbackEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Rating -->
+
+                    <div class="form-group">
+
+                        <label>
+                            How was your experience?
+                        </label>
+
+                        <div class="rating">
+
+                            <input
+                                type="radio"
+                                id="star5"
+                                name="rating"
+                                value="5"
+                            >
+
+                            <label for="star5">★</label>
+
+
+                            <input
+                                type="radio"
+                                id="star4"
+                                name="rating"
+                                value="4"
+                            >
+
+                            <label for="star4">★</label>
+
+
+                            <input
+                                type="radio"
+                                id="star3"
+                                name="rating"
+                                value="3"
+                            >
+
+                            <label for="star3">★</label>
+
+
+                            <input
+                                type="radio"
+                                id="star2"
+                                name="rating"
+                                value="2"
+                            >
+
+                            <label for="star2">★</label>
+
+
+                            <input
+                                type="radio"
+                                id="star1"
+                                name="rating"
+                                value="1"
+                            >
+
+                            <label for="star1">★</label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Feedback -->
+
+                    <div class="form-group">
+
+                        <label for="feedbackMessage">
+                            Your Feedback
+                        </label>
+
+                        <textarea
+                            id="feedbackMessage"
+                            rows="6"
+                            placeholder="Write your feedback here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Submit Feedback
+                    </button>
+
+                </form>
+
+
+                <!-- Success -->
+
+                <div
+                    id="feedbackSuccess"
+                    class="success-message"
+                >
+                    <div class="success-icon">✅</div>
+
+                    <h3>Thank You!</h3>
+
+                    <p>
+                        Your feedback has been submitted successfully.
+                    </p>
+
+                    <button
+                        onclick="window.location.href='index.html'"
+                    >
+                        Back to Home
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="feedback.js"></script>
+
+</body>
+
+</html>

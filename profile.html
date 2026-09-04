@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile - HealthCare</title>
+
+    <link rel="stylesheet" href="profile.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= BACK BUTTON ================= -->
+
+<button
+    class="back-btn"
+    onclick="window.location.href='dashboard.html'">
+
+    ⬅ Back to Home
+
+</button>
+
+
+<!-- ================= PROFILE HEADER ================= -->
+
+<div class="header">
+<img
+    src="images/profile.jpg"
+    id="profileImage"
+    class="profile-photo"
+    alt="Profile Photo"
+>
+
+    <h1 id="userName">
+        Patient Name
+    </h1>
+
+    <p>
+        HealthCare Patient Profile
+    </p>
+
+</div>
+
+
+<!-- ================= PERSONAL INFORMATION ================= -->
+
+<div class="card">
+
+    <h2>Personal Information</h2>
+
+    <div class="info">
+
+        <div class="item">
+            <strong>Email</strong>
+            <span id="userEmail">-</span>
+        </div>
+
+        <div class="item">
+            <strong>Mobile</strong>
+            <span id="userMobile">-</span>
+        </div>
+
+        <div class="item">
+            <strong>Age</strong>
+            <span id="userAge">-</span>
+        </div>
+
+        <div class="item">
+            <strong>Gender</strong>
+            <span id="userGender">-</span>
+        </div>
+
+        <div class="item">
+            <strong>Blood Group</strong>
+            <span id="userBlood">-</span>
+        </div>
+
+        <div class="item">
+            <strong>Address</strong>
+            <span id="userAddress">-</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HEALTH INFORMATION ================= -->
+
+<div class="card">
+
+    <h2>Health Information</h2>
+
+    <div class="info">
+
+        <div class="item">
+            <strong>Medical Condition</strong>
+            <span id="condition">None</span>
+        </div>
+
+        <div class="item">
+            <strong>Current Medicine</strong>
+            <span id="medicine">None</span>
+        </div>
+
+        <div class="item">
+            <strong>Emergency Contact</strong>
+            <span id="emergency">-</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= EDIT FORM ================= -->
+
+<div
+    class="card edit-card"
+    id="editCard"
+    style="display:none;">
+
+    <h2>✏ Edit Profile</h2>
+<!-- Profile Photo -->
+<label>
+    Profile Photo
+</label>
+
+<div class="photo-edit">
+
+    <img
+        id="editProfilePreview"
+        src="images/profile.jpg"
+        alt="Profile Preview"
+    >
+
+    <input
+        type="file"
+        id="editProfileImage"
+        accept="image/*"
+    >
+
+</div>
+
+    <label for="editMobile">
+        Mobile
+    </label>
+
+    <input
+        type="text"
+        id="editMobile"
+        placeholder="Enter mobile number">
+
+
+    <label for="editAge">
+        Age
+    </label>
+
+    <input
+        type="number"
+        id="editAge"
+        placeholder="Enter age">
+
+
+    <label for="editGender">
+        Gender
+    </label>
+
+    <select id="editGender">
+
+        <option value="">
+            Select Gender
+        </option>
+
+        <option value="Male">
+            Male
+        </option>
+
+        <option value="Female">
+            Female
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+
+    <label for="editBlood">
+        Blood Group
+    </label>
+
+    <select id="editBlood">
+
+        <option value="">
+            Select Blood Group
+        </option>
+
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+
+    </select>
+
+
+    <label for="editAddress">
+        Address
+    </label>
+
+    <input
+        type="text"
+        id="editAddress"
+        placeholder="Enter address">
+
+
+    <label for="editCondition">
+        Medical Condition
+    </label>
+
+    <input
+        type="text"
+        id="editCondition"
+        placeholder="Enter medical condition">
+
+
+    <label for="editMedicine">
+        Current Medicine
+    </label>
+
+    <input
+        type="text"
+        id="editMedicine"
+        placeholder="Enter current medicine">
+
+
+    <label for="editEmergency">
+        Emergency Contact
+    </label>
+
+    <input
+        type="text"
+        id="editEmergency"
+        placeholder="Enter emergency contact">
+
+
+    <div class="edit-buttons">
+
+        <button id="saveBtn">
+            💾 Save
+        </button>
+
+        <button id="cancelBtn">
+            ❌ Cancel
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= BUTTONS ================= -->
+
+<div class="buttons">
+
+    <button id="editBtn">
+        ✏ Edit Profile
+    </button>
+
+    <button id="logoutBtn">
+        🚪 Logout
+    </button>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>HealthCare Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+
+<!-- =============================== -->
+<!-- SIDEBAR -->
+<!-- =============================== -->
+
+<div class="sidebar">
+
+    <h2>🏥 HealthCare</h2>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                🏠 Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html" class="active">
+                📊 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="water-quality.html">
+                💧 Water Quality
+            </a>
+        </li>
+
+        <li>
+            <a href="ai-prediction.html">
+                🤖 AI Prediction
+            </a>
+        </li>
+
+        <li>
+            <a href="reports.html">
+                📋 Reports
+            </a>
+        </li>
+
+        <li>
+            <a href="alerts.html">
+                🚨 Alerts
+            </a>
+        </li>
+
+        <li>
+            <a href="health-records.html">
+                📋 Health Records
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html">
+                👤 My Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="login.html" id="logoutBtn">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- =============================== -->
+<!-- MAIN DASHBOARD -->
+<!-- =============================== -->
+
+<div class="main">
+
+
+    <!-- Welcome -->
+
+    <h1>
+        Welcome,
+        <span id="welcomeUser">
+            User
+        </span>
+        👋
+    </h1>
+
+
+    <!-- =============================== -->
+    <!-- EXISTING CARDS -->
+    <!-- =============================== -->
+
+    <div class="card-container">
+
+
+        <!-- Water Status -->
+
+        <div class="card">
+
+            <h3>
+                Water Status
+            </h3>
+
+            <h2>
+                ✅ Healthy
+            </h2>
+
+            <p>
+                Your recent reports indicate
+                that your water quality is stable.
+            </p>
+
+        </div>
+
+
+        <!-- AI Prediction -->
+
+        <div class="card">
+
+            <h3>
+                AI Prediction
+            </h3>
+
+            <h2>
+                Safe 💧
+            </h2>
+
+            <p>
+                AI model predicts good
+                water quality.
+            </p>
+
+        </div>
+
+
+        <!-- Latest Report -->
+
+        <div class="card">
+
+            <h3>
+                Latest Report
+            </h3>
+
+            <h2>
+                07 Aug 2026
+            </h2>
+
+            <p>
+                Last water quality check completed.
+            </p>
+
+        </div>
+
+
+        <!-- =============================== -->
+        <!-- STEP COUNTER -->
+        <!-- =============================== -->
+
+        <div class="card health-card">
+
+            <h3>
+                👟 Steps Today
+            </h3>
+
+            <h2>
+                <span id="stepCount">
+                    0
+                </span>
+                steps
+            </h2>
+
+            <p>
+                Daily Goal: 10,000 steps
+            </p>
+
+            <progress
+                id="stepProgress"
+                value="0"
+                max="10000">
+            </progress>
+
+            <p id="stepPercentage">
+                0% completed
+            </p>
+
+            <button id="stepBtn">
+                ➕ Add Steps
+            </button>
+
+        </div>
+
+
+        <!-- =============================== -->
+        <!-- HEART RATE -->
+        <!-- =============================== -->
+
+        <div class="card health-card">
+
+            <h3>
+                ❤️ Heart Rate
+            </h3>
+
+            <h2>
+
+                <span id="heartRate">
+                    --
+                </span>
+
+                BPM
+
+            </h2>
+
+            <p id="heartStatus">
+                Waiting for measurement...
+            </p>
+
+            <button id="heartBtn">
+                ❤️ Measure Heart Rate
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =============================== -->
+    <!-- WATER QUALITY CHART -->
+    <!-- =============================== -->
+
+    <div class="chart-box">
+
+        <h2>
+            Water Quality Analysis
+        </h2>
+
+        <canvas id="waterChart"></canvas>
+
+    </div>
+
+
+</div>
+
+
+<!-- =============================== -->
+<!-- JAVASCRIPT -->
+<!-- =============================== -->
+
+<script src="dashboard.js"></script>
+
+
+</body>
+
+</html>

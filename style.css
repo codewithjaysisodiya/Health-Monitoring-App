@@ -1,0 +1,689 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f9ff;
+    color:#333;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    width:100%;
+    background:#0d6efd;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:#fff;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ffd700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+.active{
+    color:#ffd700;
+}
+
+.register-btn{
+    background:white;
+    color:#0d6efd;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.register-btn:hover{
+    background:#ffd700;
+    color:black;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    width:90%;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    min-height:90vh;
+
+}
+
+.hero-left{
+
+    width:50%;
+
+}
+
+.hero-left h1{
+
+    font-size:60px;
+    color:#0d6efd;
+    margin-bottom:20px;
+
+}
+
+.hero-left p{
+
+    font-size:18px;
+    color:#666;
+    line-height:30px;
+
+}
+
+.buttons{
+
+    margin-top:35px;
+
+}
+
+.btn1,.btn2{
+
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:8px;
+    display:inline-block;
+    margin-right:15px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.btn1{
+
+    background:#0d6efd;
+    color:white;
+
+}
+
+.btn1:hover{
+
+    background:#084298;
+
+}
+
+.btn2{
+
+    background:#198754;
+    color:white;
+
+}
+
+.btn2:hover{
+
+    background:#157347;
+
+}
+
+.hero-right{
+
+    width:45%;
+    text-align:center;
+
+}
+
+.hero-right img{
+
+    width:100%;
+    max-width:500px;
+
+}
+
+/* ================= SERVICES ================= */
+
+#services{
+
+    width:90%;
+    margin:80px auto;
+
+}
+
+#services h2{
+
+    text-align:center;
+    font-size:38px;
+    margin-bottom:40px;
+    color:#0d6efd;
+
+}
+
+.service-container{
+
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+
+}
+
+.service-card{
+
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    flex:1;
+    transition:.3s;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.service-card h3{
+
+    margin-bottom:15px;
+    color:#0d6efd;
+
+}
+
+.service-card p{
+
+    color:#555;
+    line-height:28px;
+
+}
+
+/* ================= ABOUT ================= */
+
+#about{
+
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+
+}
+
+#about h2{
+
+    color:#0d6efd;
+    margin-bottom:20px;
+    font-size:38px;
+
+}
+
+#about p{
+
+    max-width:850px;
+    margin:auto;
+    line-height:32px;
+    color:#555;
+
+}
+
+/* ================= CONTACT ================= */
+
+#contact{
+
+    background:white;
+    padding:60px;
+    text-align:center;
+
+}
+
+#contact h2{
+
+    color:#0d6efd;
+    margin-bottom:20px;
+
+}
+
+#contact p{
+
+    margin:10px;
+    color:#555;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:20px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column-reverse;
+text-align:center;
+padding:50px 0;
+
+}
+
+.hero-left,
+.hero-right{
+
+width:100%;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.service-container{
+
+flex-direction:column;
+
+}
+
+nav{
+
+flex-direction:column;
+
+}
+
+nav ul{
+
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+nav ul li{
+
+margin:10px;
+
+}
+
+}
+/* =====================================================
+   QUICK STATS
+===================================================== */
+
+.quick-stats {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    font-size: 25px;
+    margin: 5px 0;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #666;
+}
+
+
+/* =====================================================
+   COMMON SECTION
+===================================================== */
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.how-section {
+    padding: 70px 5%;
+    background: #f5f8ff;
+}
+
+.how-section h2,
+.tips-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.steps-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    position: relative;
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-7px);
+}
+
+.step-number {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1769ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.step-card h3 {
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.why-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.why-left h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.why-left > p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.feature-list {
+    display: grid;
+    gap: 14px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-item span {
+    width: 28px;
+    height: 28px;
+    background: #1769ff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.feature-item p {
+    margin: 0;
+}
+
+
+.why-right {
+    display: flex;
+    justify-content: center;
+}
+
+.why-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1769ff, #4f8cff);
+    color: white;
+    box-shadow: 0 15px 35px rgba(23, 105, 255, 0.25);
+}
+
+.why-big-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    font-size: 25px;
+}
+
+.why-card p {
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   HEALTH TIPS
+===================================================== */
+
+.tips-section {
+    padding: 70px 5%;
+    background: #f5f8ff;
+}
+
+.tips-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.tip-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CALL TO ACTION
+===================================================== */
+
+.cta-section {
+    margin: 70px 5%;
+    padding: 70px 20px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1769ff, #4f8cff);
+    text-align: center;
+    color: white;
+}
+
+.cta-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.cta-section h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cta-primary,
+.cta-secondary {
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cta-primary {
+    background: white;
+    color: #1769ff;
+}
+
+.cta-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.cta-primary:hover,
+.cta-secondary:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tips-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .quick-stats,
+    .steps-container,
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 80%;
+    }
+
+}
